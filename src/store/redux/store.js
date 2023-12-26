@@ -13,8 +13,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   contacts: contactReducer,
-  isLoading: false,
-  error: null,
   filter: filterReducer,
 });
 
