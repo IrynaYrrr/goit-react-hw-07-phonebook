@@ -31,7 +31,7 @@ const contactSlice = createSlice({
     [addContact.fulfilled](state, { payload }) {
       state.isLoading = false;
       state.error = null;
-      state.contacts.push(payload);
+      state.contacts.unshift(payload);
     },
     prepare: createObjectContact,
     [addContact.rejected]: handleRejected,
