@@ -24,7 +24,7 @@ const contactSlice = createSlice({
     [fetchContacts.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.contacts = action.payload;
+      state.contacts = action.payload.reverse();
     },
     [fetchContacts.rejected]: handleRejected,
     [addContact.pending]: handlePending,
