@@ -3,7 +3,9 @@ import { filterInitialState } from './filterInitialState'
 
 const filterSlice = createSlice({
   name: "filter",
-  initialState: filterInitialState,
+  initialState: {
+    filter: ''
+  },
   reducers: {
     setFilter(state, action) {
       state.filter = action.payload;
