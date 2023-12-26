@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ContactForm } from './contactForm/ContactForm';
 import { Filter } from './filter/Filter';
 import { ContactList } from './contactList/ContactList';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from 'store/redux/selectors';
+import { fetchContacts } from 'store/redux/operations';
 
 const headersStyles = {
   margin: 8,
@@ -15,9 +16,13 @@ const headersStyles = {
 };
 
 export const App = () => {
-
+  const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div>
