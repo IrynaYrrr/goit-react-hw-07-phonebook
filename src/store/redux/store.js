@@ -10,8 +10,11 @@ const persistConfig = {
   whitelist: ['contacts']
 };
 
+
 const rootReducer = combineReducers({
   contacts: contactReducer,
+  isLoading: false,
+  error: null,
   filter: filterReducer,
 });
 
